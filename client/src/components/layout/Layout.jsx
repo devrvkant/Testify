@@ -1,8 +1,8 @@
-import { useLocation, Link } from "react-router-dom";
-import { Button } from "./ui/button";
+import { useLocation, Link, Outlet } from "react-router-dom";
+import { Button } from "../ui/button";
 import { TestTube, Github, Home, FileCode, Sparkles } from "lucide-react";
 
-export const Layout = ({ children }) => {
+export const Layout = () => {
   const location = useLocation();
 
   const navigation = [
@@ -68,7 +68,7 @@ export const Layout = ({ children }) => {
 
       {/* Main Content */}
       <main className="flex-1 container max-w-screen-2xl mx-auto px-6 py-8">
-        {children}
+        <Outlet />
       </main>
 
       {/* Footer */}
